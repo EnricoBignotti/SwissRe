@@ -1,0 +1,1083 @@
+@prefix : <http://www.semanticweb.org/it.enricobignotti/ICISA#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/it.enricobignotti/ICISA> .
+
+<http://www.semanticweb.org/it.enricobignotti/ICISA> rdf:type owl:Ontology .
+
+<http://www.semanticweb.org/it.enricobignotti/ICISA#TOP-UP_COVER> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURANCE_COVER>;
+	rdfs:label "Top-up cover  "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#DCL_BUYER> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURABLE_DEBTORS_/_CREDIT_ASSESSMENT>;
+	rdfs:label "DCL buyer "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#INSOLVENCY> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_RISKS>;
+	rdfs:label "Insolvency"@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#NO_CLAIMS_CREDIT> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#PREMIUM,_FEES>;
+	rdfs:label "No claims credit "@en,
+		"Schadensfreiheitsrabatt"@de;
+	rdfs:comment "An amount or percentage provided to the insured as a reduction of premium owed, depending on the claims ratio of the policy. "@en,
+		"Der Versicherte erhält einen Betrag oder einen Prozentsatz von seiner bezahlten Prämie zurück, abhängig vom Schadensatz der Police.................................................................... ...................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#GUARANTOR> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURABLE_DEBTORS>;
+	rdfs:label "Guarantor "@en,
+		"Garantiegeber (Bürge)"@de;
+	rdfs:comment "An individual or company that gives a promise or assurance that an obligation owing from the buyer to the insured will be paid."@en,
+		"Eine Person oder ein Unternehmen, die / das ein Versprechen und eine Versicherung abgibt, dass eine Forderung des Versicherten gegenüber dem Kunden gezahlt wird. "@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#CREDIT_LIMIT> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#CREDIT_ASSESSMENT_/_LIMITS>;
+	rdfs:label "Credit limit "@en,
+		"Kreditlimit (Limit, Versicherungssumme)"@de;
+	rdfs:comment "The maximum exposure specifically approved or otherwise authorised by the insurer in respect of a buyer. "@en,
+		"Die Versicherungssumme, die der Versicherer für einen Abnehmer selbst gezeichnet oder anderweitig genehmigt hat."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#MINIMUM_PREMIUM> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#PREMIUM,_FEES>;
+	rdfs:label "Minimum premium "@en,
+		"Minimumprämie"@de;
+	rdfs:comment "Agreed minimum amount of premium to be paid per specified period regardless of the volume of declared turnover of outstanding balances."@en,
+		"Vereinbarte Minimumprämie für eine bestimmte Dauer, unabhängig vom Volumen des deklarierten Umsatzes oder des ausstehenden Saldos."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#PRE-CREDIT_RISK> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_RISKS>;
+	rdfs:label "Pre-credit risk"@en,
+		"Produktionsrisiko  "@de;
+	rdfs:comment "The commercial risk of insolvency of a buyer before delivery or shipment of the goods or performance of a service, and/or the political risk of any interruption of the manufacturing of the goods or performance of a service."@en,
+		"Wirtschaftliches Risiko der Zahlungsunfähigkeit des Käufers vor Lieferung oder Versand der Waren oder Ausführung einer Dienstleistung und/oder das politische Risiko einer Unterbrechung der Produktion oder Verhinderung der Ausführung der Dienstleistung. "@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#SALVAGE> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#RECOVERY,_DEBT_COLLECTION>;
+	rdfs:label "Salvage  "@en,
+		"Schadenrückerstattung"@de;
+	rdfs:comment "Proceeds received from the buyer or a third party, whether before or after a claim has been indemnified."@en,
+		"Erhaltene Einnahmen vom Käufer oder Dritten, bevor oder nachdem ein Schaden vergütet worden ist."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#CO-INSURED> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#GENERAL_TERMS>;
+	rdfs:label "Co-insured  "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#RISKS_ATTACHING_POLICY> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURANCE_COVER>;
+	rdfs:label "Risks attaching policy "@en,
+		"Risks Attaching-Police"@de;
+	rdfs:comment "A policy under which cover attaches based on shipment dates and where the shipment date (but not necessarily the loss) must occur within the policy period."@en,
+		"Eine Form der Versicherungspolice, bei der das Bestehen des Versicherungsschutzes vom Lieferdatum abhängig ist: Das Datum der Warenlieferung oder Rechnungsstellung (aber nicht zwangsläufig der Schaden) muss innerhalb der Policenlaufzeit liegen. "@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#CUSTOMER> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#GENERAL_TERMS>;
+	rdfs:label "Customer  "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#DCL> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#CREDIT_ASSESSMENT_/_LIMITS>;
+	rdfs:label "DCL"@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#FACULTATIVE_(RE)INSURANCE> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#GENERAL_TERMS>;
+	rdfs:label "Facultative (re)insurance  "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#FIRST_ORDER_COVER> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#CREDIT_ASSESSMENT_/_LIMITS>;
+	rdfs:label "First order cover"@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#IMMINENT_LOSS> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#CLAIMS,_INDEMNITY>;
+	rdfs:label "Imminent loss"@en,
+		"Drohender Schaden"@de;
+	rdfs:comment "Any events or circumstances that have lead or may lead to a deterioration of the financial situation of a buyer."@en,
+		"Alle Ereignisse oder Umstände, die zur Verschlechterung der finanziellen Situation eines Abnehmers geführt haben oder führen können."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#PRIVATE_BUYER> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURABLE_DEBTORS>;
+	rdfs:label "Private buyer  "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#INSURABLE_DEBTORS> rdf:type owl:Class;
+	rdfs:label "Insurable debtors"@en;
+	rdfs:comment ""@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#WAR> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_RISKS>;
+	rdfs:label "War  "@en,
+		"Krieg"@de;
+	rdfs:comment "A declared military conflict between nations."@en,
+		"Ein erklärter militärischer Konflikt zwischen Staaten. ................................................................... ...................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#UNINSURED_PERCENTAGE> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURANCE_COVER>;
+	rdfs:label "Uninsured percentage "@en,
+		"Selbstbehalt (Selbstbeteiligung, Eigenbehalt, "@de;
+	rdfs:comment "The percentage of each insured loss that is not indemnified by the insurer and that the insured has to bear for its own account."@en,
+		"Der prozentuale Anteil jedes versicherten Schadens, welcher nicht vom Versicherer entschädigt und vom Versicherungsnehmer auf eigene Rechnung getragen wird."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#POLICY_HOLDER> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#GENERAL_TERMS>;
+	rdfs:label "Policy holder"@en,
+		"der Versicherte (der Versicherungsnehmer, der "@de;
+	rdfs:comment "Party that purchases the insurance policy and assumes responsibilities and obligations under the policy."@en,
+		"Der Beteiligte / die Partei, der/die die Versicherungspolice erwirbt und damit alle Rechte und Pflichten der Police übernimmt. "@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#MAXIMUM_PRE-CREDIT_RISK_PERIOD> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_DEBTS_/_TURNOVER>;
+	rdfs:label "Maximum pre-credit risk period "@en,
+		"Maximale Vorlaufzeit "@de;
+	rdfs:comment "Maximum delivery period. See under Delivery period."@en,
+		"Maximale / Längste Frist zwischen der Auslieferung und Fakturierung der bestellten Waren."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#CONSIGNMENT> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURANCE_COVER>;
+	rdfs:label "Consignment  "@en,
+		"Konsignation"@de;
+	rdfs:comment "Possession of goods by a consignee with the obligation to pay the supplier after the sale to a third party or when using the goods."@en,
+		"Der Abnehmer bewahrt die Ware des Lieferanten in einem sog. Konsignationslager auf mit der Verpflichtung, den Lieferanten bei Entnahme (Verkauf der Ware an einen Dritten oder Verbrauch) zu bezahlen. Die Ware bleibt bis zum Zeitpunkt der Entnahme im Eigentum des Lieferanten."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#THRESHOLD> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#CLAIMS,_INDEMNITY>;
+	rdfs:label "Threshold "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_OBLIGATION> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#GENERAL_TERMS>;
+	rdfs:label "Insured obligation "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#DEDUCTIBLE> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURANCE_COVER>;
+	rdfs:label "Deductible  "@en,
+		"Abzugsfranchise, Selbstbehalt"@de;
+	rdfs:comment "The amount of loss that must be absorbed by the insured prior to indemnification under the policy."@en,
+		"Schadenbetrag, den Versicherungsnehmer vor der Entschädigungsleistung unter der Police selbst tragen muss "@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#NQL> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#CLAIMS,_INDEMNITY>;
+	rdfs:label "NQL  "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#RECOVERY,_DEBT_COLLECTION> rdf:type owl:Class;
+	rdfs:label "Recovery, debt collection"@en;
+	rdfs:comment ""@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#QUOTA-SHARE_TREATY> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#REINSURANCE_/_NEIGHBORING_TERMS>;
+	rdfs:label "Quota-share treaty"@en,
+		"Quote / Quoten-Vertrag"@de;
+	rdfs:comment "Reinsurance in respect of a portfolio of risks insured by a primary insurer and under which the risk is shared on a percentage basis between the insurer and reinsurer, i.e. not an excess-of-loss basis. "@en,
+		"Rückversicherung von einem Portefeuille von Risiken, welches durch einen Erstversicherer versichert ist, und welches dann zwischen Erstversicherer und Rückversicherer proportional anhand eines bestimmten Prozentsatzes aufgeteilt wird (gleicher Prozentsatz für Prämien und Schäden)."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#SELF_INSURED_PERCENTAGE> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURANCE_COVER>;
+	rdfs:label "Self insured percentage"@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#UNNAMED_BUYER> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURABLE_DEBTORS_/_CREDIT_ASSESSMENT>;
+	rdfs:label "Unnamed buyer "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#CLAIM_FILING_WAITING_PERIOD> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_RISKS>;
+	rdfs:label "Claim filing waiting period "@en,
+		"Wartefrist (Wartefrist für die Anmeldung eines Anspruches)"@de;
+	rdfs:comment "The period, usually starting from the due date of payment or intervention order, after the expiry of which a claim may be submitted and the loss is assessed."@en,
+		"Die Frist, die normalerweise mit dem Fälligkeitsdatum oder einer Betreibungsmaßnahme beginnt, nach deren Ablauf der Schadenfall eingebracht werden und die Höhe des Schadens abgeschätzt werden kann. "@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#QUOTATION_(NON-BINDING)> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#GENERAL_TERMS>;
+	rdfs:label "Quotation (non-binding)  "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#PROTRACTED_DEFAULT> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_RISKS>;
+	rdfs:label "Protracted default "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#BROKER> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#GENERAL_TERMS>;
+	rdfs:label "Broker "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#QUOTE_(NON-BINDING)> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#GENERAL_TERMS>;
+	rdfs:label "Quote (non-binding) "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#DISCRETIONARY_LIMIT> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#CREDIT_ASSESSMENT_/_LIMITS>;
+	rdfs:label "Discretionary limit"@en,
+		"Anbietungsgrenze (Selbstprüfungslimit)"@de;
+	rdfs:comment "The amount up to which, according to given guidelines, the insured may set a credit limit without specific review by the insurer."@en,
+		"Der Betrag, bis zu dem der Versicherungsnehmer unter Einhaltung der vom Versicherer gesetzten Vorgaben ein Kreditlimit ohne ausdrückliche Prüfung durch den Versicherer selbst festsetzen darf."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#LOSS_PAYEE> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#GENERAL_TERMS>;
+	rdfs:label "Loss payee  "@en,
+		"Abtretungsempfänger (Zessionar) "@de;
+	rdfs:comment "Party to whom is transferred (by authorisation or the insured) the legal rights to a claim payment under a policy."@en,
+		"Die Partei, an die die Forderungen auf Entschädigungszahlung aus dem Kreditversicherungsvertrag (mit Zustimmung des Versicherungsnehmers) abgetreten sind."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#CLAIMS_THRESHOLD> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#CLAIMS,_INDEMNITY>;
+	rdfs:label "Claims threshold  "@en,
+		"Forderungsfranchise (Non qualifying loss, NQL)"@de;
+	rdfs:comment "The amount below which losses do not qualify for indemnification and are to be kept by the insured for his own account."@en,
+		"Der Betrag, unterhalb dessen Verluste nicht zur Entschädigung berechtigt sind und durch den Versicherungsnehmer zu tragen sind."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#RETAINED_RISK> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURANCE_COVER>;
+	rdfs:label "Retained risk  "@en,
+		"Selbstbehalt"@de;
+	rdfs:comment "The part of a loss which is not indemnified by the insurer and for which the insured must bear the loss without recourse to any other party."@en,
+		"Der Teil eines Schadens, der nicht vom Versicherer ersetzt wird und der ohne Rückgriff auf Dritte vom Versicherungsnehmer getragen werden muss."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#WAITING_PERIOD> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_RISKS>;
+	rdfs:label "Waiting period "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#PENDING_ORDER> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURANCE_COVER>;
+	rdfs:label "Pending order"@en,
+		"Vertragliche Bindung"@de;
+	rdfs:comment "Order that the insured cannot be released from if the buyer’s financial soundness is deteriorating. Under pre-defined conditions, credit insurance may be offered for such contracts even after withdrawal of the credit limit."@en,
+		"Auftrag, an den der Versicherungsnehmer auch bei Bonitätsverschlechterung des Abnehmers gebunden ist. Nach festgelegten Kriterien kann für solche Aufträge trotz Aufhebung des Kreditlimits auf den betroffenen Abnehmer Versicherungsschutz gewährt werden."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#NAMED_INSURED> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#GENERAL_TERMS>;
+	rdfs:label "Named insured "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#CLAIM> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#CLAIMS,_INDEMNITY>;
+	rdfs:label "Claim "@en,
+		"Schadenanzeige (Schaden)"@de;
+	rdfs:comment "An application by the insured for indemnification of a loss under the policy."@en,
+		"Antrag des Versicherungsnehmers auf Schadenzahlung aus dem Versicherungsvertrag."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#DEBTOR> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#GENERAL_TERMS>;
+	rdfs:label "Debtor"@en,
+		"Abnehmer (Schuldner, Debitor)"@de;
+	rdfs:comment "The business entity to which an insured sells its goods or services"@en,
+		"Der Geschäftspartner, dem der Versicherungsnehmer seine Waren liefert oder Dienst- bzw. Werkleistungen erbringt. "@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#OBLIGATIONS> rdf:type owl:Class;
+	rdfs:label "Obligations"@en;
+	rdfs:comment ""@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#PRIVATE_INDIVIDUAL> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURABLE_DEBTORS>;
+	rdfs:label "Private individual"@en,
+		"Privatperson"@de;
+	rdfs:comment "A person who buys goods or services for a purpose other than the purpose of his professional activity."@en,
+		"Eine natürliche Person, die Waren oder Dienstleistungen für den privaten Gebrauch und nicht für gewerbliche Zwecke bzw. gewerbliche Verwendung erwirbt."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#ACTS_OF_GOD> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_RISKS>;
+	rdfs:label "Acts of God  "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#GUARANTEED_PERCENTAGE> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURANCE_COVER>;
+	rdfs:label "Guaranteed percentage"@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#CONTRACT_REPUDIATION> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_RISKS>;
+	rdfs:label "Contract repudiation "@en,
+		"Vertragsrücktritt / "@de,
+		"Nichtanerkennung des Vertrages"@de;
+	rdfs:comment "Impossibility to perform a trade contract.."@en,
+		""@en,
+		"Die Zurückweisung / Ablehnung eines gesamten Handelsvertrags."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#CONTINGENT_LIABILITY> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#REPORTING_TERMS>;
+	rdfs:label "Contingent liability "@en,
+		"Ausfallhaftung"@de;
+	rdfs:comment "A conditional obligation of one party to another, triggered by specified events."@en,
+		"Die bedingte Verpflichtung einer Partei gegenüber einer anderen, ausgelöst durch eine spezifischen Anlass."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#TRANSACTIONAL_COVER> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURANCE_COVER>;
+	rdfs:label "Transactional cover "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#BUYER> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#GENERAL_TERMS>;
+	rdfs:label "Buyer"@en,
+		"Kunde "@de;
+	rdfs:comment "Customer may refer to both the Buyer and the Insured. See under these terms."@en,
+		"Der Begriff “Kunde” kann sich sowohl auf den “Versicherungsnehmer” beziehen, als auch auf den “Abnehmer” des Versicherungsnehmers. Siehe die betreffenden Definitionen."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#DUE_DATE_EXTENSION> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_DEBTS_/_TURNOVER>;
+	rdfs:label "Due date extension "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#TRANSFER_DELAY> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_RISKS>;
+	rdfs:label "Transfer delay"@en,
+		"Transferverzug"@de;
+	rdfs:comment "The period of time between when a foreign buyer applies for foreign exchange to repay its obligation to an insured and when the insured receives the fund"@en,
+		"Der Zeitraum zwischen dem Zeitpunkt, in dem ein ausländischer Käufer die Devisenumwechslung veranlasst um seine Schulden an den Versicherten zu bezahlen und dem Zeitpunkt, in dem der Versicherte den Betrag tatsächlich erhält. "@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#UNSPECIFIED_CUSTOMER> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURABLE_DEBTORS_/_CREDIT_ASSESSMENT>;
+	rdfs:label "Unspecified customer "@en,
+		"Unbenannte Risiken / Abnehmer / Schuldner"@de;
+	rdfs:comment "A buyer for which, according to given guidelines, insured may set a credit limit without specific review by the insurer."@en,
+		"Abnehmer, für den der Versicherungsnehmer im Rahmen der in der Police definierten Selbstprüfungskriterien ein Kreditlimit ohne Prüfung durch den Versicherer erhält.................................................................... ...................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#PAST_DUE_ACCOUNT> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#OBLIGATIONS>;
+	rdfs:label "Past due account  "@en,
+		"Überfällige Rechnung "@de;
+	rdfs:comment "A buyer obligation that has not been paid by its due date."@en,
+		"Eine Schuld des Käufers, die nicht bis zum Fälligkeitsdatum bezahlt wurde. ................................................................... ...................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#WORK_IN_PROCESS> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_RISKS>;
+	rdfs:label "Work in process "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#PERCENTAGE_OF_COVER> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURANCE_COVER>;
+	rdfs:label "Percentage of cover "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#CONTRACT_FRUSTRATION> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_RISKS>;
+	rdfs:label "Contract frustration"@en,
+		"Nichterfüllung des Vertrages"@de;
+	rdfs:comment "An arbitrary withdrawal of a party from its duties and responsibilities imposed by a contract."@en,
+		"Die willkürliche Weigerung einer Vertragspartei die vereinbarten Auflagen und Pflichten zu erfüllen. "@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#OFFER_OF_COVER> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#GENERAL_TERMS>;
+	rdfs:label "Offer of cover"@en,
+		"Deckungsangebot"@de;
+	rdfs:comment "Indication of conditions for cover based on information given on an application form."@en,
+		"Angabe von Konditionen für eine Deckung basierend auf Informationen eines Antragsformulars"@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#EXCESS_OF_LOSS> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#REINSURANCE_/_NEIGHBORING_TERMS>;
+	rdfs:label "Excess of loss "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#TRANSACTION_DATE> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURANCE_COVER>;
+	rdfs:label "Transaction date"@en,
+		"Beginn des Versicherungsschutzes"@de;
+	rdfs:comment "Beginning of taking effect of the insurance (at date of order or transaction, at date of delivery or shipment, at date of completion of performance of services) for each individual trade transaction covered under the police."@en,
+		"Zeitpunkt, an dem der Versicherungsschutz für jede einzelne Handelstransaktion im Rahmen des Deckungsumfangs der Police in Kraft tritt, zum Beispiel das Datum der Auftragsannahme, das Datum der Lieferung, das Datum der Fakturierung oder das Datum einer vertraglich erfüllten Dienstleistung."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#MEAN_DELIVERY_DATE> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_DEBTS_/_TURNOVER>;
+	rdfs:label "Mean delivery date "@en,
+		"Durchschnittliches Lieferdatum"@de;
+	rdfs:comment "Average period between date of order and date of delivery or shipment of goods or completion of services."@en,
+		"Durchschnittlicher Zeitraum zwischen dem Zeitpunkt der Bestellung und dem Zeitpunkt der Warenlieferung oder Dienstleistungserbringung."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#EXTENSION_PERIOD> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_DEBTS_/_TURNOVER>;
+	rdfs:label "Extension period "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#LOSSES_OCCURRING_POLICY> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURANCE_COVER>;
+	rdfs:label "Losses occurring policy "@en,
+		"Anfalljahr-Police"@de;
+	rdfs:comment "A policy under which cover is conditioned upon the date of the cause of loss occurring within the policy period. "@en,
+		"Police, unter der sich der Versicherungsschutz auf Schäden erstreckt, die während der Laufzeit anfallen bzw.eintreten."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#SINGLE_DEBTOR_/_SINGLE_RISK_COVER> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURANCE_COVER>;
+	rdfs:label "Single debtor / Single risk cover"@en,
+		"Hauptschuldner oder Deckung für den "@de,
+		"Hauptschuldner (Hauptkunde)"@de;
+	rdfs:comment "(Cover for) the insured’s largest buyers only (as opposed to whole turnover cover or single risk cover)."@en,
+		""@en,
+		"(Deckung für) nur den größten Kunden des Versicherten (im Gegensatz zur Deckung des gesamten Umsatzes oder der Einzelrisikodeckung)"@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#WHOLE_TURNOVER_POLICY> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURANCE_COVER>;
+	rdfs:label "Whole turnover policy"@en,
+		"Whole turnover policy (Gesamtumsatzpolice) "@de;
+	rdfs:comment "A credit insurance policy that covers the insured’s total credit sales (as opposed to Key buyer cover and Single risk cover)."@en,
+		"Eine Kreditversicherungspolice, die alle Warenlieferungen des Versicherungsnehmers abdeckt (im Gegensatz zur Einzelrisikodeckung)."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#INSURANCE_COVER> rdf:type owl:Class;
+	rdfs:label "Insurance cover"@en;
+	rdfs:comment ""@de,
+		""@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#CREDIT_PERIOD> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_DEBTS_/_TURNOVER>;
+	rdfs:label "Credit period  "@en,
+		"Zahlungsziel"@de,
+		"Zahlungsfrist (Kreditziel)"@de;
+	rdfs:comment "1. The period after delivery or shipment of goods or after rendering of services at the expiry of which invoices are due to be paid;2. the period of time provided by the insured to the buyer for repayment of delivered goods or services."@en,
+		"1. Frist, die nach der Warenlieferung bzw. nach Erbringung der Leistungen beginnt und an deren Ablauftag die Rechnung zur Zahlung fällig ist.2. Die Frist, die der Versicherungsnehmer dem Käufer für die Bezahlung von gelieferten Waren oder erbrachten Leistungen gesetzt hat."@de,
+		"1. The period after delivery or shipment of goods or after rendering of services at the expiry of which invoices are due to be paid;2. the period of time provided by the insured to the buyer for repayment of delivered goods or services."@en,
+		"1. Die Frist innerhalb welcher gelieferte Waren oder erbrachte Dienstleistungen nach Ablauf der Kreditlaufzeit zur Zahlung fällig werden.2. Die Frist welche der Versicherungsnehmer dem Käufer zwecks Zahlung der gelieferten Waren oder erbrachten Dienstleistungen gewährt hat."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#ADDITIONAL_NAMED_INSURED> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#GENERAL_TERMS>;
+	rdfs:label "Additional named insured  "@en,
+		"Mitversicherte (zusätzlicher benannter Versicherter, "@de;
+	rdfs:comment "A party, which together with the insured, purchases the insurance policy and assumes specified responsibilities and obligations."@en,
+		"Die Partei, die zusammen mit dem Versicherten die Versicherungspolice erwirbt und alle genau angegebenen Rechten und Pflichten übernimmt."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#NON_QUALIFYING_LOSS> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#CLAIMS,_INDEMNITY>;
+	rdfs:label "Non qualifying loss  "@en,
+		"Forderungsfranchise "@de;
+	rdfs:comment "The amount below which losses do not qualify for indemnification and are to be kept by the insured for his own account."@en,
+		"Der Betrag, unterhalb dessen Verluste nicht zur Entschädigung berechtigen und durch den Versicherungsnehmer zu tragen sind."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#DATUM_LINE> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#CLAIMS,_INDEMNITY>;
+	rdfs:label "Datum line "@en,
+		"Anbietungsgrenze"@de;
+	rdfs:comment "An amount below which buyers are not to be included in the insurance policy."@en,
+		"Der Forderungsbetrag, der mindestens erreicht werden muss, damit ein Abnehmer in den Versicherungsvertrag eingeschlossen wird."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#EXCHANGE_RISK> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_RISKS>;
+	rdfs:label "Exchange risk"@en,
+		"Wechselkursrisiko"@de;
+	rdfs:comment "Fluctuation in the buyer’s currency against another currency, which may affect the buyer’s financial ability to pay its obligations."@en,
+		"Schwankung der Währung des Käufers gegenüber einer anderen Währung, die die finanzielle Situation des Käufers, seinen Verbindlichkeiten nachzukommen, beeinflusst. "@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#KEY_CUSTOMER> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURABLE_DEBTORS>;
+	rdfs:label "Key customer "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#ASSET-BACKED_SECURITIES> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#REINSURANCE_/_NEIGHBORING_TERMS>;
+	rdfs:label "Asset-backed securities"@en,
+		"Asset-backed securites – festverzinsliche "@de,
+		"strukturierte Wertpapiere, welche mit "@de,
+		"Forderungsrecht besichert sind (Börse)"@de;
+	rdfs:comment "Financing of companies by the capital market through commercial papers (securities), sold by a Special Purpose Vehicle to investors, backed by the debts (assets) sold to a Special Purpose."@en,
+		""@en,
+		""@en,
+		"Finanzierung von Gesellschaften auf dem Kapitalmarkt durch kurzfristige Anleihen/Geldmarktpapiere, welche von Special Purpose Vehicles (Zweckgesellschaften) an Investoren verkauft werden, und welche durch die an die Zweckgesellschaft verkauften Verbindlichkeiten (Anlagen) abgesichert sind."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#EXPOSURE> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#REPORTING_TERMS>;
+	rdfs:label "Exposure"@en,
+		"Haftungssumme"@de;
+	rdfs:comment "Total amount underwritten by the insurer as cover on a buyer, a country or under a policy or all policies. "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#AFL> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#CLAIMS,_INDEMNITY>;
+	rdfs:label "AFL "@en,
+		"Entschädigungsvorrisiko (EVR) "@de;
+	rdfs:comment "The total amount of approved claims during an insurance period, which are to be borne by the insured for his own account prior to indemnification by the insurer."@en,
+		"Die Gesamtsumme aller anerkannten Schäden während einer Versicherungsperiode, die vom Versicherungsnehmer getragen werden, bevor es zu einer Entschädigungsleistung durch den Versicherer kommt"@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#COMMENCEMENT_OF_COVER> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURANCE_COVER>;
+	rdfs:label "Commencement of cover "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#DISCHARGE_OF_DEBT> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#FINANCIAL_AND_EXPORT_TERMS>;
+	rdfs:label "Discharge of debt"@en,
+		"Schuldenerlass "@de;
+	rdfs:comment "Relieve a party from a financial commitment."@en,
+		"Befreiung einer Partei von einer finanziellen Verpflichtung. "@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#COST_RATIO> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#REPORTING_TERMS>;
+	rdfs:label "Cost ratio  "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_TRANSACTIONS_REPORT> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#PREMIUM,_FEES>;
+	rdfs:label "Insured transactions report"@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#CREDIT_RATING_FEE> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#CREDIT_ASSESSMENT_/_LIMITS>;
+	rdfs:label "Credit rating fee"@en,
+		"Kreditprüfungsgebühr"@de;
+	rdfs:comment "Contribution to the costs of credit information gathered for the assessment of the buyer risk."@en,
+		"Finanzielle Beteiligung an den Kosten, die durch das Einholen von Informationen zur Bonitätsprüfung des Abnehmers entstehen."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#PAYMENT_TERM> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_DEBTS_/_TURNOVER>;
+	rdfs:label "Payment term "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#COUNTRY_COVER_CONDITIONS> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_RISKS>;
+	rdfs:label "Country cover conditions "@en,
+		"Länder Deckungseinschränkungen "@de;
+	rdfs:comment "Terms of coverage imposed by the insurer for its acceptance of cover on (buyers in) a particular country."@en,
+		"Für bestimmte Länder können Kreditlimits nur unter Einschränkung des Umfangs des Versicherungsschutzes gewährt werden."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#PRE-SHIPMENT_RISK> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_RISKS>;
+	rdfs:label "Pre-shipment risk"@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#LOW_CLAIMS_BONUS> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#PREMIUM,_FEES>;
+	rdfs:label "Low claims bonus  "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#POST-SHIPMENT_RISK> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_RISKS>;
+	rdfs:label "Post-shipment risk "@en,
+		"Risiko nach Versand der Ware"@de;
+	rdfs:comment "Risk of non-payment arising after the delivery of shipment of the goods or completion of the performance of services."@en,
+		"Risiko der Nichtzahlung, das nach der Lieferung oder dem Versand der Waren oder dem Abschluss der Dienstleistung besteht. "@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#SHORT-TERM_BUSINESS> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_DEBTS_/_TURNOVER>;
+	rdfs:label "Short-term business"@en,
+		"Kurzfristiges Kreditgeschäft"@de;
+	rdfs:comment "Transactions under which the insured provides the buyer with a credit period up to two years."@en,
+		"Kaufabschlüsse (Geschäftstransaktionen) bei welchen der Versicherungsnehmer dem Käufer ein Kreditziel bis maximal 2 Jahren gewährt."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#POLICY_LIMIT> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURANCE_COVER>;
+	rdfs:label "Policy limit  "@en,
+		"Höchstentschädigung "@de,
+		"Höchstentschädigung (Haftungssumme der Police, "@de;
+	rdfs:comment "Maximum amount that the insurer is liable to pay with respect to all losses during a policy period."@en,
+		"Der maximale Betrag, zu dessen Auszahlung der Versicherer bezüglich aller während einer Versicherungsperiode eingetretenen Versicherungsfälle verpflichtet ist."@de,
+		"Maximum amount that the insurer is liable to pay with respect to all losses during a policy period."@en,
+		"Der maximale Betrag, für den der Versicherer hinsichtlich aller Schäden innerhalb einer Vertragsperiode entschädigungspflichtig ist."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#ANNUAL_MAXIMUM_LIABILITY> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURANCE_COVER>;
+	rdfs:label "Annual maximum liability "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#AGGREGATE_LIMIT> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURANCE_COVER>;
+	rdfs:label "Aggregate limit  "@en,
+		"Haftungssumme der Police (Höchstentschädigung, "@de;
+	rdfs:comment "Maximum amount that the insurer is liable to pay with respect to all losses during a policy period."@en,
+		"Der Betrag, für den der Versicherer hinsichtlich aller Schäden innerhalb einer Vertragsperiode maximal zahlungspflichtig ist."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_CLIENT> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#GENERAL_TERMS>;
+	rdfs:label "Insured client "@en,
+		"Versicherungsnehmer"@de;
+	rdfs:comment "Party that purchases the insurance policy and assumes responsibilities and obligations under the policy."@en,
+		""@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#CLAIMS_RATIO> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#REPORTING_TERMS>;
+	rdfs:label "Claims ratio  "@en,
+		"Schadensatz"@de;
+	rdfs:comment "Claims payments and expenses divided by gross earned premium and premium related revenue."@en,
+		"Schadenzahlungen (inklusive dazu anfallende Kosten) geteilt durch die verdiente Bruttoprämien und prämienrelevanten Einnahmen."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#EXPENSE_RATIO> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#REPORTING_TERMS>;
+	rdfs:label "Expense ratio "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#PREMIUM,_FEES> rdf:type owl:Class;
+	rdfs:label "Premium, fees"@en;
+	rdfs:comment ""@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#INSURER> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#GENERAL_TERMS>;
+	rdfs:label "Insurer"@en,
+		"Versicherungsgeber"@de;
+	rdfs:comment "Party offering insurance policies for premiums, an underwriter."@en,
+		"der Beteiligte / die Partei, der/die Versicherungspolicen gegen Prämie anbietet."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#NON_ACCEPTANCE_OF_GOODS> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_RISKS>;
+	rdfs:label "Non acceptance of goods  "@en,
+		"Nichtannahme von Waren"@de;
+	rdfs:comment "Refusal or failure of the buyer to take possession of products shipped by the insured."@en,
+		"Weigerung oder Scheitern des Käufers, die vom Versicherten übersandten Waren in Besitz zu nehmen. "@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#KEY_BUYER> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURABLE_DEBTORS>;
+	rdfs:label "Key buyer "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#PRIMARY_INSURED> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#GENERAL_TERMS>;
+	rdfs:label "Primary insured "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#RETENTION_OF_TITLE> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURANCE_COVER>;
+	rdfs:label "Retention of title "@en,
+		"Eigentumsvorbehalt"@de;
+	rdfs:comment "Condition in a sales contract which reserves the right of product ownership to the seller until the seller has received full payment."@en,
+		"Klausel in einem Kaufvertrag, durch die das Eigentums-recht an der Ware so lange dem Verkäufer vorbehalten ist, bis er die Zahlung vollständig erhalten hat."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#GENERAL_TERMS>;
+	rdfs:label "Insured  "@en,
+		"Versicherungsnehmer"@de;
+	rdfs:comment "Party that purchases the insurance policy and assumes responsibilities and obligations under that policy."@en,
+		"Derjenige, der einen Versicherungsvertrag abschließt und verantwortlich für die Einhaltung der vertraglichen Pflichten und Erfüllung der Obliegenheiten ist."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#PUBLIC_BUYER> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURABLE_DEBTORS>;
+	rdfs:label "Public buyer "@en,
+		"Öffentlicher Abnehmer"@de;
+	rdfs:comment "The entity to which an insured sells its goods or services and that is:1. Authorised to enter into commitments in the name or on behalf of the government of its country, including the government itself, government agencies or any public sector institutions; 2. majority-owned by a government; 3. an entity whose commitments are guaranteed by the government."@en,
+		"Einheit, an die ein Versicherungsnehmer Waren oderDienstleistungen verkauft und die,1. autorisiert ist, im Namen oder an Stelle der Regierung ihres Landes rechtsverbindliche Verpflichtungen einzugehen, einschl. der Regierung selbst, staatlicher Agenturen oder jedwede andere Institution der öffentlichen Hand2. sich im Mehrheitsbesitz der öffentlichen Hand befindet3. deren rechtsverbindliche Verpflichtungen durch die öffentliche Hand garantiert werden................................................................... ...................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#CLIENT> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#GENERAL_TERMS>;
+	rdfs:label "Client"@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#INSURER’S_MAXIMUM_LIABILITY> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURANCE_COVER>;
+	rdfs:label "Insurer’s maximum liability "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#EXTENSION_OF_DUE_DATE> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_DEBTS_/_TURNOVER>;
+	rdfs:label "Extension of due date "@en,
+		"Erstreckung des Kreditziels / Zahlungsfrist "@de;
+	rdfs:comment "Granting of a credit term longer than originally agreed upon in the sales contract."@en,
+		"Verlängerung des ursprünglich gemäss Kaufvertrag vereinbarten Kreditziels / Zahlungsfrist"@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#GOVERNMENT_BUYERS> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURABLE_DEBTORS>;
+	rdfs:label "Government buyers"@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#RETENTION> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURANCE_COVER>;
+	rdfs:label "Retention  "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#AGGREGATE_FIRST_LOSS> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#CLAIMS,_INDEMNITY>;
+	rdfs:label "Aggregate first loss  "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#SINGLE_BUYER_COVER> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURANCE_COVER>;
+	rdfs:label "Single buyer cover "@en,
+		"Einzelrisikodeckung"@de;
+	rdfs:comment "Cover for all sales to one debtor or for single contract with one debtor (as opposed to whole turnover and  key buyer)."@en,
+		"Deckung für alle Warenverkäufe an einen bestimmten Schuldner bzw. für einen einzelnen Vertrag mit einem Schuldner. (Im Gegensatz zu Whole turnover policy und Key Buyer)"@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#MANUFACTURING_PERIOD> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURANCE_COVER>;
+	rdfs:label "Manufacturing period "@en,
+		"Produktionszeitraum (Herstellungszeitraum, - dauer)"@de;
+	rdfs:comment "The period between the date of order and the delivery or shipment of the goods."@en,
+		"Zeitraum zwischen der Auftragsannahme und der Lieferung oder Versand der jeweiligen Ware. "@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#COMBINED_RATIO> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#REPORTING_TERMS>;
+	rdfs:label "Combined ratio  "@en,
+		"Kombinierte Schaden-/Kostenquote"@de;
+	rdfs:comment "1. The sum of claims payments, claims expenses and underwriting expenses, including cost for credit information, divided by the sum of earned premium and premium related revenue;2. the sum of claims ratio and underwriting expense ratio."@en,
+		"1. Die Summe von Schadenzahlungen, Schadenkosten und Risikozeichnungskosten sowie Kosten für Kreditinformationen geteilt duch die Summe der verdienten Prämie und prämienrelevanten Einnahmen;2. Die Summe aus Schadensatz und Kostensatz. "@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#CONVERSION_AND_TRANSFER_RISK> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_RISKS>;
+	rdfs:label "Conversion and transfer risk  "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#RENEWAL> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#GENERAL_TERMS>;
+	rdfs:label "Renewal  "@en,
+		"Verlängerung (Erneuerung)"@de;
+	rdfs:comment "Prolongation of a policy or a credit limit after expiry of their validity or after a specified period of time. "@en,
+		"Verlängerung der Police oder des Kreditlimits nach Ablauf ihrer Gültigkeit oder nach einem genau benannten Zeitraum. "@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#DEFAULT> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_RISKS>;
+	rdfs:label "Default  "@en,
+		"Zahlungsverzug des Käufers (Verzug)"@de,
+		"Zahlungsverzug (Verzug)"@de;
+	rdfs:comment "Failure by a buyer to make payment for delivered goods or services by the due date specified in the invoice or sales contract. A default is an event that could lead to a loss for the credit insurer such as bankruptcy, Chapter 11 or any other failure to pay of the buyer which is covered under the insured’s policy."@en,
+		"Versäumnis des Käufers den Kaufpreis für die gelieferten Waren oder erbrachten Dienstleistungen zu dem in der Rechnung oder im Kaufvertrag vereinbarten Fälligkeitstermin zu bezahlen. Der Verzug ist ein Ereignis, das zu einem Schaden für den Kreditversicherer führen kann, ähnlich wie eine Insolvenz, ein Chapter 11-Verfahren oder jede andere Art der Nichterfüllung des Käufers, die in der Versicherungspolice gedeckt ist "@de,
+		"Failure by a buyer to pay the contractual debt within  a pre-defined period calculated from the due date of  the debt."@en,
+		"Nichtzahlung der vertraglichen Schuld durch einen Käufer innerhalb einer festgelegten Periode, die ab dem Fälligkeitsdatum berechnet wird. "@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#TRANSFER_RISK> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_RISKS>;
+	rdfs:label "Transfer risk "@en,
+		"Transferrisiko "@de;
+	rdfs:comment "1. The risk of revocation by the buyer’s government of the buyer’s pre-existing legal right to make payment in an invoiced currency that is different from the currency of the buyer country, at any rate of exchange;2. political risk resulting from an event outside the insured’s country preventing or delaying the transfer of funds paid by the debtor to a local bank."@en,
+		"1. Devisen-rechtliche Massnahmen einer Regierung oder Zentralbank, die dem Käufer die Bezahlung verunmöglichen. Der Käufer hat zwar den Gegenwert in seiner Lokalwährung deponiert, die Zentralbank stellt jedoch die erforderlichen Devisen nicht zur Verfügung. Unter das Transferrisiko fällt auch das Risiko, dass Fälligkeiten eines in finanzielle Notlage geratenen Landes aufgrund einer zwischenstaatlichen Vereinbarung umgeschuldet, das heisst um mehrere Jahre aufgeschoben werden (Pariser Club).2. Ein Politisches Risiko-Ereignis ausserhalb des Landes des Versicherten, das den internationalen Transfer einer an eine Bank im Land des Schuldners bezahlten Forderung verzögert oder verhindert. "@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#DL> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#CREDIT_ASSESSMENT_/_LIMITS>;
+	rdfs:label "DL "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#NON-VETTING_LIMIT> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#CREDIT_ASSESSMENT_/_LIMITS>;
+	rdfs:label "Non-vetting limit "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#COMMERCIAL_RISK> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURANCE_COVER>;
+	rdfs:label "Commercial risk"@en,
+		"Kommerzielles Risiko"@de;
+	rdfs:comment "The risk of a deterioration in the financial situation or creditworthiness of a private buyer, resulting in payment default by or the insolvency of the buyer, not caused by circumstances or occurrences defined as political risk."@en,
+		"Das Risiko der Bonitätsverschlechterung eines privatwirtschaftlichen Abnehmers mit der Folge der Nichtzahlung oder Insolvenz, wobei diese nicht durch Ereignisse verursacht wird, welche unter die Definition des politischen Risikos fallen."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#COUNTRY_LIMIT> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_RISKS>;
+	rdfs:label "Country limit  "@en,
+		"Länderlimits (Länderplafond)"@de;
+	rdfs:comment "The maximum exposure specifically approved or otherwise authorised by the insurer in respect of a particular country."@en,
+		"Das maximale zulässige oder genehmigte Kreditengagement für ein bestimmtes Land."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_RISKS> rdf:type owl:Class;
+	rdfs:label "Insured Risks"@en;
+	rdfs:comment ""@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#MEDIUM-TERM_BUSINESS> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_DEBTS_/_TURNOVER>;
+	rdfs:label "Medium-term business "@en,
+		"Mittelfristiges Kreditgeschäft"@de;
+	rdfs:comment "Transactions under which the insured provides the buyer with a credit period between 1 and 3 to 5 years in length, usually characterised by a down payment and equal instalments of payment."@en,
+		"Kaufabschlüsse (Geschäftstransaktionen) bei welchen der Versicherungsnehmer dem Käufer ein Kreditziel zwischen 1 und 3 bis maximal 5 Jahren gewährt wobei in der Regel eine Anzahlung und nachfolgende Ratenzahlungen vereinbart werden. "@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#CO-INSURANCE> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURANCE_COVER>;
+	rdfs:label "Co-insurance  "@en,
+		"Nicht versicherter Anteil (Selbstbehalt)"@de;
+	rdfs:comment "The percentage of each insured loss that is not indemnified by the insurer and that the insured has to bear for its own account."@en,
+		"Der prozentuale Anteil an jedem versicherten Schaden, der nicht vom Versicherer ersetzt wird und den der Versicherungsnehmer auf eigene Rechnung tragen muss."@de,
+		""@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#COVERED_PERCENTAGE> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURANCE_COVER>;
+	rdfs:label "Covered percentage"@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#UNDERWRITING_RATIO> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#REPORTING_TERMS>;
+	rdfs:label "Underwriting ratio"@en,
+		"Kostensatz"@de;
+	rdfs:comment "The sum of underwriting expenses, including cost for credit information, divided by the sum of earned premium, including premium-related revenue."@en,
+		"Die Summe der Ausgaben für das Bearbeiten der Risiken (anfallende Kosten für die Risikozeichnung) inklusive die Kosten für die Kreditinformationen geteilt durch die verdienten Prämien einschliesslich prämienrelevante Einnahmen."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#DEFAULTED_ACCOUNT> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#OBLIGATIONS>;
+	rdfs:label "Defaulted account "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#NO_CLAIMS_BONUS> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#PREMIUM,_FEES>;
+	rdfs:label "No claims bonus"@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#JOINT_INSURANCE> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#GENERAL_TERMS>;
+	rdfs:label "Joint insurance "@en,
+		"Mitversicherung"@de;
+	rdfs:comment "Insurance offered by more than one insurer for their combined account."@en,
+		"Versicherung, die von mehr als einem Versicherer für eine verbundene Forderung angeboten wird."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#FIRST_SALE_CLAUSE> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#CREDIT_ASSESSMENT_/_LIMITS>;
+	rdfs:label "First sale clause  "@en,
+		"Vorausdeckung für Neukunden"@de;
+	rdfs:comment "Policy feature that provides cover for risks commencing before a credit limit has been established, for buyers with whom the insured has not traded before."@en,
+		"Regelung in der Police, wonach Versicherungsschutz für einen neuen Abnehmer für einen Zeitraum vor der Zeichnung eines Kreditlimits gewährt wird, sofern der Versicherungsnehmer mit dem Abnehmer bisher noch keine Geschäftsbeziehung unterhalten hat."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#AGENT> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#GENERAL_TERMS>;
+	rdfs:label "Agent"@en,
+		"Makler"@de;
+	rdfs:comment "The party via which an application for insurance is presented from prospective insured to the insurer. "@en,
+		"Die Partei, über die ein potentieller Versicherungsnehmer dem Versicherer einen Antrag auf Abschluss der Versicherung übermittelt."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#CLAIMS_WAITING_PERIOD> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#CLAIMS,_INDEMNITY>;
+	rdfs:label "Claims waiting period "@en,
+		"Schadenfrist (Frist zur Schadeneinreichung, Karenzfrist) "@de;
+	rdfs:comment "The period, usually starting from the due date of payment or intervention order, after the expiry of which a claim may be submitted and the loss is assessed."@en,
+		"Die Frist, welche üblicherweise mit dem Fälligkeitsdatum der Rechnung oder dem Inkassoauftragsdatum beginnt, nach deren Überschreitung der Schaden eingereicht und festgestellt werden kann."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#NBI> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#GENERAL_TERMS>;
+	rdfs:label "NBI "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#MAXIMUM_LIABILITY> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURANCE_COVER>;
+	rdfs:label "Maximum liability "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#COUNTRY_RATING> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_RISKS>;
+	rdfs:label "Country rating "@en,
+		"Länder-Rating "@de;
+	rdfs:comment "Indication of creditworthiness of a country."@en,
+		"Bewertung der Kreditwürdigkeit eines Landes."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#BINDING_ORDER> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURANCE_COVER>;
+	rdfs:label "Binding order "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_BUYER_OBLIGATION> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#GENERAL_TERMS>;
+	rdfs:label "Insured buyer obligation"@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#SHIPMENT> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURANCE_COVER_/_FINANCIAL_AND_EXPORT_TERMS>;
+	rdfs:label "Shipment"@en,
+		"Warenlieferung"@de;
+	rdfs:comment "The placement en route to the buyer of the goods ordered by the buyer."@en,
+		"Die Überbringung der bestellten Waren an den Käufer.................................................................... ...................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#XL> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#REINSURANCE_/_NEIGHBORING_TERMS>;
+	rdfs:label "XL "@en,
+		"Schadenexzedent (XL, XOL)"@de;
+	rdfs:comment "Insurance, cover or indemnification in excess of an amount of first loss to be borne by the insured."@en,
+		"Versicherung, Deckung für eine Schadenzahlung, die das Erstrisiko des Versicherten übersteigt."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#POLITICAL_RISK> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_RISKS>;
+	rdfs:label "Political risk  "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#EFFECTIVE_DATE> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURANCE_COVER>;
+	rdfs:label "Effective date "@en,
+		"Laufzeitbeginn (der Police)"@de;
+	rdfs:comment "The date on which the policy comes into force."@en,
+		"Datum, an welchem die Police in Kraft tritt."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#POLICY_CURRENCY> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#GENERAL_TERMS>;
+	rdfs:label "Policy currency "@en,
+		"Policen-Währung"@de;
+	rdfs:comment "The currency in which all financial transactions or amounts under the policy are denominated (credit limits, indemnifications, costs, premium etc.)."@en,
+		"Die Währung, in der alle finanziellen Transaktionen oder Beträge in der Police benannt werden (Kreditlimite, Entschädigungen, Kosten, Prämien etc.)"@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#OVERDUE_ACCOUNT> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#OBLIGATIONS>;
+	rdfs:label "Overdue account "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#MINIMUM_RETENTION> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#CLAIMS,_INDEMNITY>;
+	rdfs:label "Minimum retention "@en,
+		"Mindestselbstbehalt"@de;
+	rdfs:comment "The minimum amount of each loss that the insured has to bear for his own account."@en,
+		"Der Betrag, den der Versicherungsnehmer in jedem Schadenfall selbst zu tragen hat."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#GENERAL_TERMS> rdf:type owl:Class;
+	rdfs:label "General terms"@en;
+	rdfs:comment ""@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#DECLARATION_OF_TURNOVER> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#PREMIUM,_FEES>;
+	rdfs:label "Declaration of turnover  "@en,
+		"Deklaration des Umsatzes (Lieferungscheine, "@de;
+	rdfs:comment "Specification of the invoiced turnover on the buyers covered under the policy as the basis for premium calculation."@en,
+		"Angabe des verrechneten Umsatzes der Käufer, welche in der Police gedeckt sind, als Basis der Prämienberechnung."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#ENDORSEMENT> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#GENERAL_TERMS>;
+	rdfs:label "Endorsement "@en,
+		"Nachtrag"@de;
+	rdfs:comment "Addendum to or enhancement of the policy conditions"@en,
+		"Ergänzung, Erweiterung oder Änderung der Konditionen der Police."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#CREDIT_ASSESSMENT_/_LIMITS> rdf:type owl:Class;
+	rdfs:label "Credit assessment / limits"@en;
+	rdfs:comment ""@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#RESCHEDULING> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#CLAIMS,_INDEMNITY>;
+	rdfs:label "Rescheduling  "@en,
+		"Zahlungsplan (Umschulding, Stundung) "@de;
+	rdfs:comment "Amending the credit terms of a debt by setting one or more new due dates. "@en,
+		"Änderung der Zahlungsbedingungen einer Forderung durch Vereinbarung einer oder mehrerer neuer Fälligkeitsdaten.................................................................... ...................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#POLICY_DEDUCTIBLE> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#CLAIMS,_INDEMNITY>;
+	rdfs:label "Policy deductible "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#NON-BINDING_INDICATION> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#GENERAL_TERMS>;
+	rdfs:label "Non-binding indication "@en,
+		"das nicht bindende (unverbindliche) Angebot "@de;
+	rdfs:comment "An insurer’s written offer of policy terms and conditions, subject to change by the insurer."@en,
+		"Ein vom Versicherer erstelltes Angebot mit Bedingungen und Konditionen, die vom Versicherer verändert werden können "@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#INDEMNIFICATION> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#CLAIMS,_INDEMNITY>;
+	rdfs:label "Indemnification "@en,
+		"Entschädigung"@de;
+	rdfs:comment "Compensation for a loss."@en,
+		"Ausgleichszahlung (des Versicherers) für einen Schaden."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#NATURAL_DISASTERS> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_RISKS>;
+	rdfs:label "Natural disasters  "@en,
+		"Naturkatastrophen (Höhere Gewalt, vis major)"@de;
+	rdfs:comment "Manifestation of a natural force that is beyond the control of the insured, buyer, guarantor or government. "@en,
+		"Auftreten einer Naturgewalt, die weder durch einen Versicherten, Käufer, Garantiegeber oder eine Regierung kontrolliert werden kann. "@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#CLAIMS,_INDEMNITY> rdf:type owl:Class;
+	rdfs:label "Claims, indemnity "@en;
+	rdfs:comment "Asset-backed securites . . . . . . . . . . . . . . . . . . . . . . . . . .99Börse . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .99Quote / Quoten-Vertrag . . . . . . . . . . . . . . . . . . . . . . . .100Schadenexzedent . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .100XL . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .100XoL . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .100Ausfallhaftung . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .102Haftungssumme . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .103Kombinierte Schaden-/Kostenquote . . . . . . . . . . . . . .101Kostensatz. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .102Schadensatz  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .101"@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#DECLARATION_OF_OUTSTANDING_BALANCES> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#PREMIUM,_FEES>;
+	rdfs:label "Declaration of outstanding balances "@en,
+		"Meldung des Forderungssaldos"@de;
+	rdfs:comment "Specification of outstanding balances (typically per end of the month) on the buyers covered under the policy as the basis for premium calculation."@en,
+		"Die Angabe des Forderungssaldos (normaler Weise mit Ende des Monats) der versicherten Käufer als Grundlage für die Prämienberechnung."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#EXPORT_CREDIT_INSURANCE> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURANCE_COVER>;
+	rdfs:label "Export credit insurance"@en,
+		"Ausfuhrkreditversicherung "@de;
+	rdfs:comment "Insurance of credit risk related to the sale of goods to buyers in another country."@en,
+		"Versicherung des Delkredere-Risikos im Zusammenhang mit dem Verkauf von Waren an Abnehmer im Ausland."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#BLIND_COVER> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#CREDIT_ASSESSMENT_/_LIMITS>;
+	rdfs:label "Blind cover "@en,
+		"Blinddeckung "@de;
+	rdfs:comment "Policy feature that provides (a reduced percentage of) cover when no credit limit has been established on the Buyer and no adverse information is known. (see also under First Sale Clause)"@en,
+		"Regelung in der Police, wonach Versicherungsschutz (bei reduzierter Versicherungsquote) für den betreffenden Abnehmer gewährt wird, auch wenn kein Kreditlimit festgesetzt ist, soweit keine negativen Informationen über die Bonität des Abnehmers bekannt sind. Siehe auch unter „Vorausdeckung für Neukunden“."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#MAXIMUM_PAYMENT_TERMS> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_DEBTS_/_TURNOVER>;
+	rdfs:label "Maximum payment terms"@en,
+		"Maximales Kreditziel / Kreditfrist  "@de;
+	rdfs:comment "The longest credit period approved for a buyer under the policy."@en,
+		"Das längste Kreditziel / Die längste Zahlungsfrist welches/welche einem Käufer entsprechend der Versicherungspolice / dem Versicherungsvertrag gewährt werden darf. "@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#SHIPMENT_REPORT> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#PREMIUM,_FEES>;
+	rdfs:label "Shipment report "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#COLLECTIONS_COSTS> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#RECOVERY,_DEBT_COLLECTION>;
+	rdfs:label "Collections costs"@en,
+		"Kosten für das Inkasso"@de;
+	rdfs:comment "The costs incurred in preventing or minimising the loss or for in collection the amount owing by the buyer."@en,
+		"Kosten für das Vermeiden oder Minimieren von Schäden oder für das Eintreiben des geschuldeten Betrags des Käufers. "@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#DUE_TO_NOTIFY> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#OBLIGATIONS>;
+	rdfs:label "Due to notify  "@en,
+		"Meldeverpflichtung"@de;
+	rdfs:comment "Obligation of the insured to notify the insurer of changes of insurable turnover as indicated on the applications form for the policy, adverse information, overdue accounts."@en,
+		"Verpflichtung des Versicherten dem Versicherer Veränderungen des wie im Antragsformular zur Versicherungspolice angegebenen versicherten Umsatzes, Negativinformation oder überfällige Forderungen zu melden. "@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#DEPOSIT_PREMIUM> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#PREMIUM,_FEES>;
+	rdfs:label "Deposit premium "@en,
+		"Depotprämie"@de;
+	rdfs:comment "(Instalments of) premium paid in advance, to be adjusted upon receipt of the declaration of turnover or outstanding balances."@en,
+		"Vorauszahlung (in Raten), die nach Erhalt der Deklaration des Umsatzes oder des ausstehenden Saldos angepasst wird."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#INSURABLE_DEBTORS_/_CREDIT_ASSESSMENT> rdf:type owl:Class;
+	rdfs:label "Insurable debtors / credit assessment"@en;
+	rdfs:comment ""@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#COLLATERAL> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#RECOVERY,_DEBT_COLLECTION>;
+	rdfs:label "Collateral  "@en;
+	rdfs:comment "Assets, rights or guarantees pledged as security by the buyer or by a third party on behalf of the buyer for the extension of credit by the insured to the buyer.Vermögen, Rechte oder Garantien, welche vom Käufer oder von Dritten als Sicherheit für den vom Versicherten gewährten Kredit hinterlegt werden."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#PAYMENT_DEFAULT> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_RISKS>;
+	rdfs:label "Payment default "@en,
+		"Nichterfüllung (Zahlungsausfall) "@de;
+	rdfs:comment "Failure of the buyer to meet his contractual (payment) obligations. A default is an event that can lead to a loss for the credit insurer, such as bankruptcy, Chapter 11 or any other failure to pay of the buyer which is covered under the insured’s policy."@en,
+		"Nichteinhaltung vertraglich vereinbarter (Zahlungs-) Verpflichtungen durch den Abnehmer. Die Nichteinhaltung ist ein Ereignis, welches zu einem Schaden für den Kreditversicherer führen kann. Beispiele: Insolvenz, Chapter 11 oder jeder andere Zahlungsausfall des Abnehmers, der unter der Police des Versicherungsnehmers gedeckt ist."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#REPORTING_TERMS> rdf:type owl:Class;
+	rdfs:label "Reporting terms"@en;
+	rdfs:comment ""@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_TRANSACTION> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#GENERAL_TERMS>;
+	rdfs:label "Insured transaction "@en,
+		"Versicherte Geschäft (versicherte Verbindlichkeit, "@de;
+	rdfs:comment "An obligation owing from a specific buyer to the insured and falling within the scope of the insurance contract."@en,
+		"Eine Verbindlichkeit eines bestimmten Käufers bei dem Versicherten, die in den Geltungsbereich des Versicherungsvertrages fällt. "@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#COMPREHENSIVE_COVER> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURANCE_COVER>;
+	rdfs:label "Comprehensive cover "@en,
+		"Kombinierter / Umfassender Versicherungsschutz"@de;
+	rdfs:comment "1. Insurance of the entire sales turnover of the insured (opp. Single risk cover);2. insurance for both commercial and political risks."@en,
+		"1. Versicherung des gesamten versicherbaren Umsatzes des Versicherungsnehmers (im Gegensatz zur Einzelrisiko-Deckung)2. Versicherung des kommerziellen und politischen Risikos"@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#EXCESS_INSURANCE> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURANCE_COVER>;
+	rdfs:label "Excess insurance  "@en,
+		"Top-up cover (Zusatzlimit)"@de;
+	rdfs:comment "Additional coverage over a credit limit established by the same or another insurer."@en,
+		"Zusätzliche Deckung über ein – vom selben oder einem anderen Versicherer gewährtes – Kreditlimit hinaus."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#NON_PAYMENT_RISK> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#CLAIMS,_INDEMNITY>;
+	rdfs:label "Non payment risk  "@en,
+		"Nichtzahlungsrisiko"@de;
+	rdfs:comment "The risk that a buyer will default on its obligation to pay an invoice."@en,
+		"Das Risiko, dass der Abnehmer seiner Verpflichtung zur Zahlung einer Rechnung nicht nachkommt."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#FINANCIAL_AND_EXPORT_TERMS> rdf:type owl:Class;
+	rdfs:label "Financial and export terms"@en;
+	rdfs:comment ""@de,
+		""@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#DEFERRAL_OF_PAYMENT> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_DEBTS_/_TURNOVER>;
+	rdfs:label "Deferral of payment  "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#CREDIT_UNDERWRITING> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#CREDIT_ASSESSMENT_/_LIMITS>;
+	rdfs:label "Credit underwriting "@en,
+		"Kreditprüfung"@de;
+	rdfs:comment "Assessment by the credit insurer of the financial condition of buyers, prior to setting a credit limit."@en,
+		"Bewertung der finanziellen Situation eines Abnehmers durch den Kreditversicherer vor der Entscheidung über ein Kreditlimit."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#REINSURANCE_/_NEIGHBORING_TERMS> rdf:type owl:Class;
+	rdfs:label "Reinsurance / neighboring terms"@en;
+	rdfs:comment ""@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#COUNTRY_RANK> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_RISKS>;
+	rdfs:label "Country rank  "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#RUN-IN_COVER> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURANCE_COVER>;
+	rdfs:label "Run-in cover"@en,
+		"Run-in cover (Versicherung bestehender Forderungen)"@de;
+	rdfs:comment "Inclusion of cover of amounts outstanding on buyers at the effective date of the policy or the date a credit limit applied for or established."@en,
+		"Einschluss der Deckung ausstehender Forderungen, die am Tag des Inkrafttretens des Versicherungsvertrages bzw. am Tag an dem ein entsprechendes Kreditlimit gilt oder in Kraft tritt, bereits bestehen."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_PERCENTAGE> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURANCE_COVER>;
+	rdfs:label "Insured percentage  "@en,
+		"Versicherter Anteil"@de,
+		"Versicherter Anteil (Gedeckter Anteil)"@de;
+	rdfs:comment "The percentage of each insured loss that is indemnified by the insurer."@en,
+		"Der prozentuale Anteil jedes versicherten Schadens, welcher vom Versicherer erstattet wird."@de,
+		"The percentage of each insured loss that is indemnified by the insurer."@en,
+		"Der prozentuale Anteil an jedem versicherten Schaden, der vom Versicherer getragen wird."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#BANKRUPTCY> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_RISKS>;
+	rdfs:label "Bankruptcy "@en,
+		"Insolvenz (Konkurs)"@de;
+	rdfs:comment "A judicial or administrative procedure whereby the assets and affairs of the buyer are made subject to control or supervision by the court or a person or body appointed by the court or by law, for the purpose of reorganisation or liquidation of the buyer or of the rescheduling, settlement or suspension of payment of its debts."@en,
+		"Ein gerichtliches oder verwaltungsbehördliches Verfahren, in dem die Vermögenswerte und die geschäftlichen Angelegenheiten des Käufers der Kontrolle oder Aufsicht eines Gerichts, einer Person oder einer Körperschaft – die durch ein Gericht oder durch das Gesetz bestimmt werden - zum Zweck der Reorganisation oder Liquidation des Käufers oder Umschuldung, eines Zahlungsausgleiches oder der Stundung der Verbindlichkeiten des Käufers, unterstellt werden. "@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#JOINT_INSURER> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#GENERAL_TERMS>;
+	rdfs:label "Joint insurer "@en,
+		"Mitversicherer"@de;
+	rdfs:comment "Insurer offering insurance policies in cooperation with one or more insurers for their combined account. "@en,
+		"Versicherer, der Versicherungspolicen in Zusammenarbeit mit einem oder mehr Versicherern für ihre verbundenen Forderungen anbietet."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#DATE_OF_ASCERTAINMENT_OF_LOSS> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#CLAIMS,_INDEMNITY>;
+	rdfs:label "Date of ascertainment of loss"@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#COSTS_FOR_WORK_IN_PROGRESS> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#CLAIMS,_INDEMNITY>;
+	rdfs:label "Costs for work in progress  "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#DUE_DATE> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_DEBTS_/_TURNOVER>;
+	rdfs:label "Due date "@en,
+		"Fälligkeitsdatum "@de;
+	rdfs:comment "Date by which the buyer must pay its debt according to the sales contract or invoice."@en,
+		"Stichtag ab welchem der Käufer gemäss Verkaufsvertrag oder Rechnung verpflichtet ist zu zahlen. "@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#COSTS_INCURRED_BUT_NOT_BILLED> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#CLAIMS,_INDEMNITY>;
+	rdfs:label "Costs incurred but not billed  "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#THIRD_COUNTRY_RISK> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURANCE_COVER>;
+	rdfs:label "Third country risk  "@en,
+		"Drittlandrisiko "@de;
+	rdfs:comment "Exposure to economic an political risks in a country other than the country of the insured or the buyer, usually a country through which shipments may pass or where the goods are to be delivered, or the services to be performed."@en,
+		"Der Umgang mit wirtschaftlichen und politischen Risiken in einem Land, das weder das Sitzland des Versicherungsnehmers, noch das des Käufers ist. Üblicherweise handelt es sich um ein Land, das auf dem Transportweg liegt, oder um das Land, in das die Waren geliefert werden bzw. in dem die entsprechenden Leistungen zu erbringen sind. "@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#MAIN_INSURED> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#GENERAL_TERMS>;
+	rdfs:label "Main insured"@en,
+		"Hauptversicherter"@de;
+	rdfs:comment "Leading insured on behalf of a group of joint-insured."@en,
+		"der führende Versicherte in Bezug auf eine Gruppe Mitversicherter."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#DCL_DEBTOR> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURABLE_DEBTORS_/_CREDIT_ASSESSMENT>;
+	rdfs:label "DCL debtor  "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#MAXIMUM_CREDIT_TERMS> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_DEBTS_/_TURNOVER>;
+	rdfs:label "Maximum credit terms  "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#MAXIMUM_EXTENSION_PERIOD> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_DEBTS_/_TURNOVER>;
+	rdfs:label "Maximum extension period "@en,
+		"Erstreckungsfrist (maximale Erstreckungsfrist)"@de;
+	rdfs:comment "The maximum due date extension allowed under a policy."@en,
+		"Maximale Verlängerung des ursprünglich gemäss Kaufvertrag vereinbarten Kreditziels / Zahlungsfrist Frist welche gemäss Versicherungspolice / Versicherungsvertrag gewährt werden kann."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#CONTRACT_RISK> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_RISKS>;
+	rdfs:label "Contract risk"@en,
+		"Vertragsrisiko "@de;
+	rdfs:comment "The commercial risk of insolvency of a buyer before delivery or shipment of the goods or performance of a service, and/or the political risk of any interruption of the manufacturing of the goods or performance of a service."@en,
+		"Wirtschaftliches Risiko der Zahlungsunfähigkeit des Käufers vor Lieferung oder Versand der Waren oder Ausführung einer Dienstleistung und/oder das politische Risiko einer Unterbrechung der Produktion oder Verhinderung der Ausführung der Dienstleistung. "@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#DISCRETIONARY_CREDIT_LIMIT> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#CREDIT_ASSESSMENT_/_LIMITS>;
+	rdfs:label "Discretionary credit limit "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#JOINT_INSURED> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#GENERAL_TERMS>;
+	rdfs:label "Joint insured "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#FAC> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#GENERAL_TERMS>;
+	rdfs:label "FAC "@en,
+		"Fakultative Rückversicherung"@de;
+	rdfs:comment "(Re)insurance in respect of a particular risk instead of a portfolio of risks."@en,
+		"Rückversicherung in Bezug auf ein bestimmtes Risiko anstelle eines Portfolios von Risiken "@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#MAIN_INSURER> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#GENERAL_TERMS>;
+	rdfs:label "Main insurer "@en,
+		"Hauptversicherer"@de;
+	rdfs:comment "Leading insurer on behalf of a group of joint insurers."@en,
+		"der führende Versicherer in Bezug auf eine Gruppe von Mitversicherern"@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#GOVERNMENT_DEBTORS> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURABLE_DEBTORS>;
+	rdfs:label "Government debtors "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#DATE_OF_LOSS> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#CLAIMS,_INDEMNITY>;
+	rdfs:label "Date of loss"@en,
+		"Schadenfeststellungsdatum (Schadendatum)"@de;
+	rdfs:comment "1. Date on which the insured loss will be assessed by the insurer2. Date on which the insured loss is deemed to have occurred."@en,
+		"1. Das Datum, an dem der Versicherer den Schaden des Versicherungsnehmers festgestellt hat2. Das Datum, an dem der versicherte Schaden als eingetreten betrachtet wird."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#MEAN_LENGTH_OF_CREDIT> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_DEBTS_/_TURNOVER>;
+	rdfs:label "Mean length of credit  "@en,
+		"Durchschnittliche Kreditdauer"@de;
+	rdfs:comment "Average period between delivery or shipment of goods and due date of invoice."@en,
+		"Durchschnittlicher Zeitraum zwischen dem Zeitpunkt der Auslieferung oder Warenversand und dem Zeitpunkt der Fälligkeit (Fälligkeitsdatum)."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#UNNAMED_DEBTOR> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURABLE_DEBTORS_/_CREDIT_ASSESSMENT>;
+	rdfs:label "Unnamed debtor "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#PRIVATE_DEBTOR> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURABLE_DEBTORS>;
+	rdfs:label "Private debtor"@en,
+		"Privatabnehmer"@de;
+	rdfs:comment "The business entity to which an insured sells its goods or services and that is:1. Not a public buyer;2. not majority-owned by a government."@en,
+		"Ein Unternehmen an welches ein Versicherter seine Waren oder Dienstleistungen verkauft und welches:1.kein staatliches Unternehmen ist2.keine staatliche Mehrheitsbeteiligung aufweist"@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#MORATORIUM> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_RISKS>;
+	rdfs:label "Moratorium  "@en,
+		"Stundung (Moratorium)"@de;
+	rdfs:comment "A cessation of payments, usually by a government against all or a class of creditors."@en,
+		"Die Einstellung von Zahlungen - in der Regel durch eine Regierung - gegenüber allen oder einer Kategorie von Gläubigern. "@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#CREDIT_TERM> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_DEBTS_/_TURNOVER>;
+	rdfs:label "Credit term "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#BINDING_CONTRACTS> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURANCE_COVER>;
+	rdfs:label "Binding contracts "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#DELIVERY> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURANCE_COVER>;
+	rdfs:label "Delivery  "@en,
+		"Lieferung"@de;
+	rdfs:comment "Making the goods available to the buyer or any person acting on his behalf at the place and on the terms specified in the sales contract."@en,
+		"Die Bereitstellung der Ware für den Abnehmer oder einer anderen in dessen Auftrag handelnden Person am vertraglich vereinbarten Ort und zu den vertraglich vereinbarten Bestimmungen."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#CLAIMS_MADE_POLICY> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#CLAIMS,_INDEMNITY>;
+	rdfs:label "Claims made policy "@en,
+		"Schadenversicherungs-Police "@de;
+	rdfs:comment "Policy, which covers applications for indemnification made during the policy term. See also: Losses occurring policies and Risk attaching policies"@en,
+		"Police, die Schäden bzw. Anträge zur Entschädigung abdecken, die während der Vertragslaufzeit anfallen."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#NOTICE_OF_CLAIM> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#CLAIMS,_INDEMNITY>;
+	rdfs:label "Notice of Claim "@en,
+		"Schaden (Schadenanzeige)"@de;
+	rdfs:comment "An application by the insured for indemnification of a loss under the policy."@en,
+		"Antrag des Versicherungsnehmers auf Schadenzahlung aus dem Versicherungsvertrag."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#KEY_DEBTOR> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURABLE_DEBTORS>;
+	rdfs:label "Key debtor "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#XOL> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#REINSURANCE_/_NEIGHBORING_TERMS>;
+	rdfs:label "XoL "@en;
+	rdfs:comment "Die Partei, die die Versicherungspolice erwirbt und damit alle Rechte und Pflichten der Police übernimmt. "@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#RECOVERIES> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#RECOVERY,_DEBT_COLLECTION>;
+	rdfs:label "Recoveries  "@en,
+		"Schadenrückerstattung"@de;
+	rdfs:comment "Proceeds received from the buyer or a third party, whether before or after a claim has been indemnified."@en,
+		"Erhaltene Einnahmen vom Käufer oder Dritten, bevor oder nachdem ein Schaden vergütet worden ist."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#PARTIAL_ACCEPTANCE_OF_A_LIMIT> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#CREDIT_ASSESSMENT_/_LIMITS>;
+	rdfs:label "Partial acceptance of a limit "@en,
+		"Teilzeichnung (Teilentscheidung)"@de;
+	rdfs:comment "Decision of an underwriter to not fully grant the credit limit amount applied for by the insured."@en,
+		"Entscheidung eines Kreditprüfers, das Kreditlimit nicht vollständig in der vom Versicherungsnehmer beantragten Höhe zu zeichnen."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#EACH_AND_EVERY_FIRST_LOSS> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURANCE_COVER>;
+	rdfs:label "Each and every first loss "@en,
+		"Entschädigungsfranchise, Einzelschadenfranchise "@de;
+	rdfs:comment "Amount to be deducted from each claim payment to be kept for the account of the insured."@en,
+		"Betrag, der von jeder einzelnen Schadenzahlung abgezogen wird und den der Versicherungsnehmer auf eigene Rechung tragen muss."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#PRE-INVOICING_EXPENSES> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#CLAIMS,_INDEMNITY>;
+	rdfs:label "Pre-invoicing expenses "@en,
+		"Fabrikationskosten (Aufwendungen vor Rechnungstellung; "@de;
+	rdfs:comment "Expenses incurred for uncompleted rendered services or product construction."@en,
+		"Aufwendungen für noch nicht vollständig erbrachte Dienstleistungen oder Produktionen"@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#COUNTRY_RISK> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_RISKS>;
+	rdfs:label "Country risk "@en,
+		"Politisches Risiko (Länderrisiko)"@de;
+	rdfs:comment "1. The risk that a government buyer or country prevents the fulfilment of a transaction or fails to meet payment obligations in time. The risk that is beyond the scope of an individual buyer or falls outside the individual buyer’s responsibility;2. the risk that a country prevents the performance of a transaction;3. the risk that a country remains in default to transfer to the country of the insured the moneys paid by buyers domiciled in that country."@en,
+		"1. Das Risiko, dass ein staatlicher Käufer oder ein Staat die Vertragserfüllung verhindert oder der Zahlungsverpflichtung nicht rechtzeitig nachkommt. Das Risiko, das außerhalb des Einflussbereichs oder der Verantwortlichkeit des Käufers liegt. 2. Das Risiko, dass ein Staat die Durchführung eines Geschäfts verhindert;3. Das Risiko, dass ein Staat die Überweisung des von einem Käufer mit Sitz in diesem Land bezahlten Kaufpreises in das Land des Versicherten beschränkt oder behindert (Transferrisiko)."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#ASSIGNEE> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#GENERAL_TERMS>;
+	rdfs:label "Assignee "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#CREDIT_ASSESSMENT_FEE> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#CREDIT_ASSESSMENT_/_LIMITS>;
+	rdfs:label "Credit assessment fee  "@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#IRREVOCABLE_LETTER_OF_CREDIT> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#FINANCIAL_AND_EXPORT_TERMS>;
+	rdfs:label "Irrevocable letter of credit "@en,
+		"Unwiderrufliches (Dokumenten-) Akkreditiv"@de;
+	rdfs:comment "1. Unalterable obligation of a bank authorising a person or company to draw money up to a specified amount, usually a third party bank, subject to documentary compliance; 2. as per definition in UPC."@en,
+		"1. Unabänderliche Verpflichtung einer Bank, einer Person oder eines Unternehmens – überlicherweise der Bank einer dritten Partei – einen Geldbetrag bis zu einer bestimmten Höhe auszuzahlen, soweit diese die vereinbarten Dokumente ordnungsgemäß vorlegt.2. Gemäß Definition in den UPC "@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#COMMISSION> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#GENERAL_TERMS>;
+	rdfs:label "Commission "@en,
+		"Maklerlohn"@de;
+	rdfs:comment "Remuneration of a party (e.g. a broker for services rendered)."@en,
+		"Entlohnung einer Partei (z.B. eines Maklers für geleistete Dienste)."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#DOMESTIC_BUSINESS> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_DEBTS_/_TURNOVER>;
+	rdfs:label "Domestic business "@en,
+		"Inlandgeschäft oder Inland-Kreditversicherung"@de;
+	rdfs:comment "Transactions with buyers domiciled in the same country as the insured."@en,
+		"Kreditlieferungen an Käufer welche im selben Land wie der Versicherungsnehmer domiziliert sind."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#COUNTRY_RISK_CLASSIFICATION> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_RISKS>;
+	rdfs:label "Country risk classification"@en .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_DEBTS_/_TURNOVER> rdf:type owl:Class;
+	rdfs:label "Insured debts / turnover"@en;
+	rdfs:comment ""@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#RUN_OFF_COVER> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURANCE_COVER>;
+	rdfs:label "Run off cover "@en,
+		"Auslaufdeckung"@de;
+	rdfs:comment "Continuation of cover of risks which commenced before withdrawal of a credit limit or the expiry of a policy until payment or until the occurrence of a covered cause of loss."@en,
+		"Fortdauernde Deckung von Lieferungen und Leistungen, die vor der Aufhebung eines Kreditlimits oder vor dem Auslauf des Versicherungsvertrages begannen, bis zum Zeitpunkt der Zahlung bzw. bis zum Eintritt eines gedeckten Schadenereignisses."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#ADVERSE_INFORMATION> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#CLAIMS,_INDEMNITY>;
+	rdfs:label "Adverse information "@en,
+		"Nachteilige Informationen"@de;
+	rdfs:comment "Events or circumstances that have led or may lead to a deterioration of the financial situation or creditworthiness of a buyer."@en,
+		"Ereignisse oder Umstände, die zur Verschlechterung der finanziellen Situation oder Kreditwürdigkeit eines Abnehmers geführt haben oder führen können."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#DELIVERY_PERIOD> rdf:type owl:Class;
+	rdfs:subClassOf <http://www.semanticweb.org/it.enricobignotti/ICISA#INSURED_DEBTS_/_TURNOVER>;
+	rdfs:label "Delivery period  "@en,
+		"Lieferzeit (Lieferfrist)"@de;
+	rdfs:comment "The period between date of order and delivery or shipment of goods."@en,
+		"Der Zeitraum zwischen dem Tag der Bestellung und Lieferung der bestellten Waren."@de .
+<http://www.semanticweb.org/it.enricobignotti/ICISA#INSURANCE_COVER_/_FINANCIAL_AND_EXPORT_TERMS> rdf:type owl:Class;
+	rdfs:label "Insurance cover / financial and export terms"@en .
