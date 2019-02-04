@@ -1,13 +1,10 @@
 #-*- encoding: utf-8 -*-
-import sys
 from xml.dom import minidom
 #import for regular expressions and comparing files
 import re
 import difflib
 #import dedicated library for automatically build the .owl file
 from TurtleOWL import *
-
-
 import operator
 #extracts the column from its coordinates
 def sortColumn(left):
