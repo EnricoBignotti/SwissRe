@@ -140,6 +140,7 @@ class TurtleOWL(object):
                 "@prefix xml: <http://www.w3.org/XML/1998/namespace> .\n" +\
                 "@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n" +\
                 "@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n" +\
+                "@prefix skos: <http://www.w3.org/2004/02/skos/core#> .\n" +\
                 "\n".join(["@prefix {}: <{}>".format(ns, uri) for ns, uri in self._namespaces.iteritems()]) +\
                 "@base <{0}> .\n\n" +\
                 "<{0}> rdf:type owl:Ontology .\n\n"
